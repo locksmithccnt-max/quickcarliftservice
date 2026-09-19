@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Icon from "@/components/Icon";
 import PageHero from "@/components/PageHero";
+import CTABanner from "@/components/CTABanner";
 import WebPageSchema from "@/components/seo/WebPageSchema";
 import { buildMetadata } from "@/lib/metadata";
 import {
@@ -20,6 +21,38 @@ export const metadata: Metadata = buildMetadata({
   path: "/contact",
 });
 
+const contactMethods = [
+  {
+    label: "Call",
+    value: business.phone,
+    href: telHref(),
+    icon: "phone" as const,
+    note: "Fastest response",
+  },
+  {
+    label: "WhatsApp",
+    value: business.phone,
+    href: whatsappHref(undefined, "Hi, I'd like to enquire about a car lift."),
+    icon: "whatsapp" as const,
+    note: "Message anytime",
+    external: true,
+  },
+  {
+    label: "Email",
+    value: business.email,
+    href: mailHref(),
+    icon: "mail" as const,
+    note: "Non-urgent enquiries",
+  },
+  {
+    label: "Based in",
+    value: `${business.basedIn}, ${business.address.country}`,
+    href: null,
+    icon: "map-pin" as const,
+    note: `Serving ${business.serviceAreas.join(", ")}`,
+  },
+];
+
 export default function ContactPage() {
   return (
     <>
@@ -34,101 +67,121 @@ export default function ContactPage() {
         ]}
       />
 
+      {/* Contact method cards */}
       <section className="section">
         <div className="container-page">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <a href={telHref()} className="card card-hover">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                <Icon name="phone" size={22} />
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
-                Call
-              </h3>
-              <p className="mt-1 text-sm text-foreground-muted">
-                {business.phone}
-              </p>
-            </a>
-
-            <a
-              href={whatsappHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card card-hover"
-            >
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                <Icon name="whatsapp" size={22} />
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
-                WhatsApp
-              </h3>
-              <p className="mt-1 text-sm text-foreground-muted">
-                {business.whatsapp}
-              </p>
-            </a>
-
-            <a href={mailHref()} className="card card-hover">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                <Icon name="mail" size={22} />
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
-                Email
-              </h3>
-              <p className="mt-1 break-all text-sm text-foreground-muted">
-                {business.email}
-              </p>
-            </a>
-
-            <div className="card">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                <Icon name="map-pin" size={22} />
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
-                Based in
-              </h3>
-              <p className="mt-1 text-sm text-foreground-muted">
-                {business.basedIn}, {business.address.country}
-              </p>
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {contactMethods.map((m) => {
+              const inner = (
+                <>
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                    <Icon name={m.icon} size={22} />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-foreground">
+                    {m.label}
+                  </h3>
+                  <p className="mt-1 break-all text-sm text-foreground-muted">
+                    {m.value}
+                  </p>
+                  {m.note && (
+                    <p className="mt-1 text-xs text-accent">{m.note}</p>
+                  )}
+                </>
+              );
+              return m.href ? (
+                <a
+                  key={m.label}
+                  href={m.href}
+                  {...(m.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="card card-hover"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={m.label} className="card">
+                  {inner}
+                </div>
+              );
+            })}
           </div>
 
-          <div className="mt-12 grid gap-10 lg:grid-cols-2">
+          {/* Social profiles */}
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <p className="text-sm font-semibold text-foreground">Follow us:</p>
+            <a
+              href={business.socialProfiles.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
+            >
+              <Icon name="facebook" size={16} />
+              Facebook
+            </a>
+            <a
+              href={business.socialProfiles.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
+            >
+              <Icon name="instagram" size={16} />
+              Instagram
+            </a>
+            <a
+              href={business.socialProfiles.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
+            >
+              <Icon name="tiktok" size={16} />
+              TikTok
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Info + coverage */}
+      <section className="section bg-background-soft">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <h2 className="h2">Get in touch</h2>
               <p className="mt-3 text-foreground-muted">
-                We&apos;re happy to hear from you — whether you&apos;re booking a
-                trip, asking about pricing, or arranging staff transport for
+                We&apos;re happy to hear from you — whether you&apos;re booking
+                a trip, asking about pricing, or arranging staff transport for
                 your business. The quickest way to reach us is by phone or
                 WhatsApp.
               </p>
               <ul className="mt-6 space-y-4">
                 <li className="flex items-start gap-3">
-                  <Icon
-                    name="map-pin"
-                    size={18}
-                    className="mt-0.5 text-accent"
-                  />
+                  <Icon name="phone" size={18} className="mt-0.5 text-accent" />
                   <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      Address
-                    </p>
-                    <p className="text-sm text-foreground-muted">
-                      {business.address.street}, {business.address.city},{" "}
-                      {business.address.country}
-                    </p>
+                    <p className="text-sm font-semibold text-foreground">Phone &amp; WhatsApp</p>
+                    <a
+                      href={telHref()}
+                      className="text-sm text-foreground-muted hover:text-accent"
+                    >
+                      {business.phone}
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Icon
-                    name="clock"
-                    size={18}
-                    className="mt-0.5 text-accent"
-                  />
+                  <Icon name="mail" size={18} className="mt-0.5 text-accent" />
                   <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      Hours
-                    </p>
+                    <p className="text-sm font-semibold text-foreground">Email</p>
+                    <a
+                      href={mailHref()}
+                      className="text-sm text-foreground-muted hover:text-accent"
+                    >
+                      {business.email}
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="map-pin" size={18} className="mt-0.5 text-accent" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Location</p>
                     <p className="text-sm text-foreground-muted">
-                      {business.openingHours}
+                      {business.basedIn}, {business.address.country}
                     </p>
                   </div>
                 </li>
@@ -136,12 +189,9 @@ export default function ContactPage() {
             </div>
 
             <div className="card">
-              <h3 className="text-lg font-semibold text-foreground">
-                Coverage
-              </h3>
+              <h3 className="text-lg font-semibold text-foreground">Coverage</h3>
               <p className="mt-2 text-sm text-foreground-muted">
-                We are based in {business.basedIn} and serve the following
-                emirates:
+                Based in {business.basedIn}, serving:
               </p>
               <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
                 {business.serviceAreas.map((area) => (
@@ -156,12 +206,17 @@ export default function ContactPage() {
               </ul>
               <p className="mt-4 text-xs text-foreground-subtle">
                 Need transport beyond these areas? Contact us — we may still be
-                able to help or refer you.
+                able to help.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <CTABanner
+        title="Ready to book your ride?"
+        description="Call or WhatsApp us — we confirm your seat and driver the same day."
+      />
     </>
   );
 }

@@ -4,14 +4,18 @@ import { telHref, whatsappHref } from "@/config/business";
 
 export default function NotFound() {
   return (
-    <section className="section">
-      <div className="container-page">
+    <section className="relative overflow-hidden section flex items-center">
+      <div className="glow-accent -left-32 top-0 h-72 w-72" />
+      <div className="glow-accent -right-32 bottom-0 h-72 w-72" />
+      <div className="container-page relative">
         <div className="mx-auto max-w-xl text-center">
-          <p className="eyebrow">404</p>
-          <h1 className="h1 mt-3">This page wandered off the route</h1>
+          <p className="inline-flex items-center justify-center rounded-full border border-accent/30 bg-accent-soft px-4 py-1.5 text-sm font-semibold text-accent">
+            404
+          </p>
+          <h1 className="h1 mt-4">This page wandered off the route</h1>
           <p className="mt-4 text-foreground-muted">
             The page you were looking for doesn&apos;t exist or may have moved.
-            Try heading back to the homepage or explore our services.
+            Head back home or explore our services.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/" className="btn btn-primary">
@@ -22,10 +26,10 @@ export default function NotFound() {
               View services
             </Link>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-4 text-sm text-foreground-muted">
+          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-foreground-muted">
             <a
               href={telHref()}
-              className="inline-flex items-center gap-1.5 hover:text-foreground"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
             >
               <Icon name="phone" size={14} />
               Call us
@@ -34,7 +38,7 @@ export default function NotFound() {
               href={whatsappHref()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-foreground"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
             >
               <Icon name="whatsapp" size={14} />
               WhatsApp

@@ -150,7 +150,8 @@ export default async function LocationPage({
 
             <aside>
               <div className="sticky top-24 space-y-4">
-                <div className="card">
+                <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-gradient-to-br from-accent/10 via-surface to-surface p-5">
+                  <div className="glow-accent -right-10 -top-10 h-40 w-40" />
                   <p className="eyebrow">Get a ride in {location.city}</p>
                   <p className="mt-2 text-sm text-foreground-muted">
                     Call, message, or send an enquiry.

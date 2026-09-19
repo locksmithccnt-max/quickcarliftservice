@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Icon from "@/components/Icon";
 import PageHero from "@/components/PageHero";
 import BookingForm from "@/components/BookingForm";
+import CTABanner from "@/components/CTABanner";
 import WebPageSchema from "@/components/seo/WebPageSchema";
 import { buildMetadata } from "@/lib/metadata";
 import { business, telHref, whatsappHref } from "@/config/business";
@@ -47,7 +48,8 @@ export default function BookingPage() {
             </div>
 
             <aside className="space-y-4">
-              <div className="card">
+              <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-gradient-to-br from-accent/10 via-surface to-surface p-5">
+                <div className="glow-accent -right-10 -top-10 h-40 w-40" />
                 <p className="eyebrow">Prefer to speak with us?</p>
                 <p className="mt-2 text-sm text-foreground-muted">
                   For urgent trips, call or message us directly.
@@ -116,6 +118,11 @@ export default function BookingPage() {
           </div>
         </div>
       </section>
+
+      <CTABanner
+        title="Need a ride sooner?"
+        description="Call or WhatsApp us — we confirm your seat and driver the same day."
+      />
     </>
   );
 }

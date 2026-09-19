@@ -181,7 +181,8 @@ export default async function ServicePage({
 
             <aside className="lg:col-span-1">
               <div className="sticky top-24 space-y-4">
-                <div className="card">
+                <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-gradient-to-br from-accent/10 via-surface to-surface p-5">
+                  <div className="glow-accent -right-10 -top-10 h-40 w-40" />
                   <p className="eyebrow">Enquire about this service</p>
                   <p className="mt-2 text-sm text-foreground-muted">
                     Share your trip details and we&apos;ll reply with a fare

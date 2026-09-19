@@ -202,7 +202,8 @@ export default async function RoutePage({
 
             <aside className="lg:col-span-1">
               <div className="sticky top-24 space-y-4">
-                <div className="card">
+                <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-gradient-to-br from-accent/10 via-surface to-surface p-5">
+                  <div className="glow-accent -right-10 -top-10 h-40 w-40" />
                   <p className="eyebrow">Book this route</p>
                   <div className="mt-3 flex items-center gap-3 rounded-lg border border-border bg-background px-4 py-3">
                     <span className="text-sm font-semibold text-foreground">
