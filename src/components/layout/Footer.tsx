@@ -123,6 +123,15 @@ export default function Footer() {
               >
                 <Icon name="tiktok" size={17} />
               </a>
+              <a
+                href={business.socialProfiles.google}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Business Profile"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground-muted transition-colors hover:border-accent/40 hover:text-accent"
+              >
+                <Icon name="google" size={17} />
+              </a>
             </div>
           </div>
 

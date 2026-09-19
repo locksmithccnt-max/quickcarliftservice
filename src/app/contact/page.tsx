@@ -135,6 +135,15 @@ export default function ContactPage() {
               <Icon name="tiktok" size={16} />
               TikTok
             </a>
+            <a
+              href={business.socialProfiles.google}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-accent"
+            >
+              <Icon name="google" size={16} />
+              Google
+            </a>
           </div>
         </div>
       </section>

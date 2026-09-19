@@ -24,7 +24,8 @@ export type IconName =
   | "star"
   | "facebook"
   | "instagram"
-  | "tiktok";
+  | "tiktok"
+  | "google";
 
 const paths: Record<IconName, React.ReactNode> = {
   phone: (
@@ -203,6 +204,13 @@ const paths: Record<IconName, React.ReactNode> = {
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"
+    />
+  ),
+  google: (
+    <path
+      fill="currentColor"
+      stroke="none"
+      d="M21.35 11.1H12.18v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.93 4.9 1.93l1.97-1.98S18.44 2.5 12.2 2.5C6.42 2.5 2.03 7 2.03 12s4.39 9.5 10.17 9.5c5.8 0 9.5-3.78 9.5-9.1 0-1.06-.14-1.9-.35-2.8H21.35z"
     />
   ),
 };

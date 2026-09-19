@@ -30,6 +30,7 @@ export const business = {
     facebook: "https://www.facebook.com/share/1C3BBRRCo1/",
     instagram: "https://www.instagram.com/quick.taxi.uae",
     tiktok: "https://www.tiktok.com/@wpc.trip",
+    google: "https://share.google/lNLlpzNffdVzTWNZm",
   },
   serviceAreas: ["Abu Dhabi", "Dubai", "Ajman", "Al Ain"] as const,
   basedIn: "Abu Dhabi",
