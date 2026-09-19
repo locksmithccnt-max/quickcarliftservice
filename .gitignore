@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Claude Code session files
 .claude/
+
+# Google service account key — never commit
+scripts/service-account.json
