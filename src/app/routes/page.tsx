@@ -44,7 +44,7 @@ export default function RoutesIndexPage() {
               </span>
               <span className="inline-flex items-center gap-1.5 text-foreground-muted">
                 <Icon name="car" size={14} />
-                Private 160 AED
+                Private 180 AED
               </span>
             </div>
             <div className="flex items-center gap-3">

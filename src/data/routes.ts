@@ -43,14 +43,14 @@ export const routes: Route[] = [
       "Morning commuter trips and return afternoon/evening trips are the most common. We also arrange trips outside standard hours based on availability.",
     pricing: {
       sharing: 100,
-      private: 160,
+      private: 180,
       currency: "AED",
     },
     faqs: [
       {
         question: "How much does the Abu Dhabi to Dubai car lift cost?",
         answer:
-          "Sharing seat: 100 AED per person. Private car (vehicle to yourself): 160 AED. Call or WhatsApp to confirm availability and book your seat.",
+          "Sharing seat: 100 AED per person. Private car (vehicle to yourself): 180 AED. Call or WhatsApp to confirm availability and book your seat.",
       },
       {
         question: "How long does the Abu Dhabi to Dubai trip take?",
@@ -77,7 +77,7 @@ export const routes: Route[] = [
     metadata: {
       title: "Car Lift Abu Dhabi to Dubai — 100 AED Sharing | Quick Car Lift Service",
       description:
-        "Car lift from Abu Dhabi to Dubai. Sharing seat 100 AED per person, private car 160 AED. Call or WhatsApp +971 54 330 8261 to book.",
+        "Car lift from Abu Dhabi to Dubai. Sharing seat 100 AED per person, private car 180 AED. Call or WhatsApp +971 54 330 8261 to book.",
     },
   },
   {
@@ -95,14 +95,14 @@ export const routes: Route[] = [
       "Morning trips are most popular for commuters. Return trips in the evening are available on request.",
     pricing: {
       sharing: 100,
-      private: 160,
+      private: 180,
       currency: "AED",
     },
     faqs: [
       {
         question: "How much does the Dubai to Abu Dhabi car lift cost?",
         answer:
-          "Sharing seat: 100 AED per person. Private car (vehicle to yourself): 160 AED. Call or WhatsApp to confirm availability and book your seat.",
+          "Sharing seat: 100 AED per person. Private car (vehicle to yourself): 180 AED. Call or WhatsApp to confirm availability and book your seat.",
       },
       {
         question:
@@ -129,7 +129,7 @@ export const routes: Route[] = [
     metadata: {
       title: "Car Lift Dubai to Abu Dhabi — 100 AED Sharing | Quick Car Lift Service",
       description:
-        "Car lift from Dubai to Abu Dhabi. Sharing seat 100 AED per person, private car 160 AED. Call or WhatsApp +971 54 330 8261 to book.",
+        "Car lift from Dubai to Abu Dhabi. Sharing seat 100 AED per person, private car 180 AED. Call or WhatsApp +971 54 330 8261 to book.",
     },
   },
   {

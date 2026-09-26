@@ -126,7 +126,7 @@ export default function HomePage() {
                 <span className="text-foreground-muted">Dubai ↔ Abu Dhabi:</span>
                 <span className="font-bold text-accent">100 AED sharing</span>
                 <span className="text-foreground-subtle">·</span>
-                <span className="font-semibold text-foreground">160 AED private</span>
+                <span className="font-semibold text-foreground">180 AED private</span>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href={telHref()} className="btn btn-primary">
@@ -179,7 +179,7 @@ export default function HomePage() {
                     </div>
                     <div className="rounded-lg border border-border bg-background-soft p-4 text-center">
                       <p className="text-2xl font-bold text-foreground">
-                        160 <span className="text-sm font-semibold text-foreground-muted">AED</span>
+                        180 <span className="text-sm font-semibold text-foreground-muted">AED</span>
                       </p>
                       <p className="mt-1 text-xs font-medium text-foreground-muted">
                         Private car

@@ -21,7 +21,7 @@ export default function OrganizationSchema() {
       height: 768,
     },
     image: `${SITE_URL}/logo.webp`,
-    priceRange: "AED 100–160",
+    priceRange: "AED 100–180",
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Bank Transfer, WhatsApp Pay",
     areaServed: business.serviceAreas.map((area) => ({
