@@ -18,8 +18,8 @@ import { business, telHref, whatsappHref, SITE_URL } from "@/config/business";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: `${business.name} | ${business.tagline}`,
-  description: business.description,
+  title: "Car Lift Service Dubai to Abu Dhabi | From 100 AED — Quick Car Lift Service",
+  description: "Reliable car lift service from Dubai to Abu Dhabi from 100 AED sharing. Based in Abu Dhabi — daily, monthly & private trips across UAE. Call +971 54 330 8261.",
   path: "/",
 });
 
