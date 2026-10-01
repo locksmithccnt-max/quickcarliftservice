@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Icon from "@/components/Icon";
@@ -160,34 +161,36 @@ export default function HomePage() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-surface p-8">
+              <div className="relative overflow-hidden rounded-xl border border-accent/25 bg-surface p-0">
                 <div className="glow-accent -right-10 -top-10 h-40 w-40 bg-accent/15" />
-                <div className="relative">
+                {/* Car image */}
+                <div className="relative h-56 overflow-hidden rounded-t-xl">
+                  <Image
+                    src="/images/quick-carlift-service-lexus-es-private-ride-dubai-front-view.webp"
+                    alt="Lexus ES private car lift service — Quick Car Lift Service Abu Dhabi Dubai"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 0vw, 40vw"
+                    priority
+                  />
+                </div>
+                {/* Price guide below image */}
+                <div className="relative p-6">
                   <p className="eyebrow">Price guide</p>
-                  <p className="mt-1 text-lg font-semibold text-foreground">
-                    Dubai ↔ Abu Dhabi
-                  </p>
+                  <p className="mt-1 text-lg font-semibold text-foreground">Dubai ↔ Abu Dhabi</p>
                   <div className="mt-4 grid grid-cols-2 gap-3">
                     <div className="rounded-lg border border-accent/30 bg-accent-soft p-4 text-center">
-                      <p className="text-2xl font-bold text-accent">
-                        100 <span className="text-sm font-semibold">AED</span>
-                      </p>
-                      <p className="mt-1 text-xs font-medium text-foreground-muted">
-                        Sharing seat
-                      </p>
+                      <p className="text-2xl font-bold text-accent">100 <span className="text-sm font-semibold">AED</span></p>
+                      <p className="mt-1 text-xs font-medium text-foreground-muted">Sharing seat</p>
                       <p className="text-xs text-foreground-subtle">per person, one way</p>
                     </div>
                     <div className="rounded-lg border border-border bg-background-soft p-4 text-center">
-                      <p className="text-2xl font-bold text-foreground">
-                        180 <span className="text-sm font-semibold text-foreground-muted">AED</span>
-                      </p>
-                      <p className="mt-1 text-xs font-medium text-foreground-muted">
-                        Private car
-                      </p>
+                      <p className="text-2xl font-bold text-foreground">180 <span className="text-sm font-semibold text-foreground-muted">AED</span></p>
+                      <p className="mt-1 text-xs font-medium text-foreground-muted">Private car</p>
                       <p className="text-xs text-foreground-subtle">whole vehicle, one way</p>
                     </div>
                   </div>
-                  <div className="mt-5 flex flex-col gap-2">
+                  <div className="mt-4 flex flex-col gap-2">
                     <a href={telHref()} className="btn btn-primary w-full justify-center">
                       <Icon name="phone" size={16} />
                       Call to Book

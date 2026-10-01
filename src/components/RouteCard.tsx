@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import type { Route } from "@/data/routes";
@@ -8,6 +9,17 @@ export default function RouteCard({ route }: { route: Route }) {
       href={`/routes/${route.slug}`}
       className="card card-hover group flex h-full flex-col"
     >
+      {route.image && (
+        <div className="relative -mx-5 -mt-5 mb-5 h-36 overflow-hidden rounded-t-xl">
+          <Image
+            src={route.image}
+            alt={route.imageAlt ?? `${route.origin} to ${route.destination} car lift`}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+        </div>
+      )}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3 text-lg font-semibold text-foreground">
           <span>{route.origin}</span>

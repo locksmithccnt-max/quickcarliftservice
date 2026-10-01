@@ -15,6 +15,8 @@ export type Service = {
   relatedServices: string[];
   relatedLocations: string[];
   icon: string;
+  image?: string;
+  imageAlt?: string;
   metadata: {
     title: string;
     description: string;
@@ -78,6 +80,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "calendar-day",
+    image: "/images/quick-carlift-service-toyota-camry-daily-commute-dubai-abu-dhabi.webp",
+    imageAlt: "Toyota Camry on daily car lift commute between Dubai and Abu Dhabi",
     metadata: {
       title: "Daily Car Lift Service in Abu Dhabi | Quick Car Lift Service",
       description:
@@ -140,6 +144,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "calendar-month",
+    image: "/images/quick-carlift-service-honda-civic-weekly-monthly-travel-uae.webp",
+    imageAlt: "Honda Civic used for weekly and monthly car lift across UAE",
     metadata: {
       title: "Monthly Car Lift Subscription | Quick Car Lift Service",
       description:
@@ -202,6 +208,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "building-office",
+    image: "/images/quick-carlift-service-hyundai-sonata-comfortable-car-lift-uae.webp",
+    imageAlt: "Hyundai Sonata comfortable car lift for office commuters across UAE",
     metadata: {
       title: "Office Transportation Service | Quick Car Lift Service",
       description:
@@ -264,6 +272,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "users",
+    image: "/images/quick-carlift-service-honda-civic-affordable-carpool-dubai.webp",
+    imageAlt: "Honda Civic affordable carpool for employee transportation in Dubai",
     metadata: {
       title: "Employee Transportation Service | Quick Car Lift Service",
       description:
@@ -326,6 +336,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "user",
+    image: "/images/quick-carlift-service-lexus-es-private-ride-dubai-front-view.webp",
+    imageAlt: "Lexus ES private car lift service in Dubai — Quick Car Lift Service",
     metadata: {
       title: "Private Car Lift with Driver | Quick Car Lift Service",
       description:
@@ -388,6 +400,8 @@ export const services: Service[] = [
     ],
     relatedLocations: ["abu-dhabi", "dubai", "ajman", "al-ain"],
     icon: "route",
+    image: "/images/quick-carlift-service-white-suv-family-intercity-transport-uae.webp",
+    imageAlt: "White SUV for family inter-city car lift transport across UAE",
     metadata: {
       title: "City-to-City Transportation UAE | Quick Car Lift Service",
       description:

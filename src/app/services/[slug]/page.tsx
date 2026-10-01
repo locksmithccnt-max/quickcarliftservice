@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Icon from "@/components/Icon";
@@ -78,6 +79,18 @@ export default async function ServicePage({
         <div className="container-page">
           <div className="grid gap-10 lg:grid-cols-3">
             <div className="space-y-10 lg:col-span-2">
+              {service.image && (
+                <div className="relative h-64 overflow-hidden rounded-xl sm:h-80">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt ?? service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                </div>
+              )}
               <div>
                 <h2 className="h3">Overview</h2>
                 <p className="mt-4 text-foreground-muted">

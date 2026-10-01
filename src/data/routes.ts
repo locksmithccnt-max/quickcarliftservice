@@ -19,6 +19,8 @@ export type Route = {
   dropoffInfo: string;
   scheduling: string;
   pricing?: RoutePricing;
+  image?: string;
+  imageAlt?: string;
   faqs: RouteFaq[];
   relatedRoutes: string[];
   metadata: {
@@ -46,6 +48,8 @@ export const routes: Route[] = [
       private: 180,
       currency: "AED",
     },
+    image: "/images/quick-carlift-service-lexus-es-abu-dhabi-to-dubai-car-lift-rear-side.webp",
+    imageAlt: "Lexus ES car lift from Abu Dhabi to Dubai — Quick Car Lift Service",
     faqs: [
       {
         question: "How much does the Abu Dhabi to Dubai car lift cost?",
@@ -98,6 +102,8 @@ export const routes: Route[] = [
       private: 180,
       currency: "AED",
     },
+    image: "/images/quick-carlift-service-lexus-es-dubai-abu-dhabi-car-lift-front-angle.webp",
+    imageAlt: "Lexus ES car lift from Dubai to Abu Dhabi — Quick Car Lift Service",
     faqs: [
       {
         question: "How much does the Dubai to Abu Dhabi car lift cost?",
@@ -145,6 +151,8 @@ export const routes: Route[] = [
       "Drop-off in main areas of Ajman including Al Nuaimiya, Al Rashidiya, Al Rawda, Al Mowaihat, and along the Ajman Corniche.",
     scheduling:
       "Both single-trip and return options are available. Please share your preferred pickup time and Ajman drop-off area when booking.",
+    image: "/images/quick-carlift-service-kia-optima-shared-carpool-abu-dhabi.webp",
+    imageAlt: "Kia Optima shared carpool car lift from Abu Dhabi to Ajman",
     faqs: [
       {
         question: "How often do you run the Abu Dhabi to Ajman route?",

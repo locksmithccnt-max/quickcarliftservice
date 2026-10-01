@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Icon from "@/components/Icon";
 import PageHero from "@/components/PageHero";
 import CTABanner from "@/components/CTABanner";
@@ -28,6 +29,8 @@ const vehicleTypes = [
       "Suitable for city and inter-emirate routes",
     ],
     icon: "car" as const,
+    image: "/images/quick-carlift-service-hyundai-sonata-comfortable-car-lift-uae.webp",
+    imageAlt: "Hyundai Sonata sedan used for comfortable car lift across UAE",
   },
   {
     title: "SUVs",
@@ -40,6 +43,8 @@ const vehicleTypes = [
       "Popular for airport and Al Ain trips",
     ],
     icon: "user" as const,
+    image: "/images/quick-carlift-service-white-suv-family-intercity-transport-uae.webp",
+    imageAlt: "White SUV for family and intercity car lift transport UAE",
   },
   {
     title: "Vans & minibuses",
@@ -100,6 +105,17 @@ export default function FleetPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {vehicleTypes.map((v) => (
               <div key={v.title} className="card flex h-full flex-col">
+                {v.image && (
+                  <div className="relative -mx-5 -mt-5 mb-5 h-44 overflow-hidden rounded-t-xl">
+                    <Image
+                      src={v.image}
+                      alt={v.imageAlt!}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
                   <Icon name={v.icon} size={22} />
                 </div>

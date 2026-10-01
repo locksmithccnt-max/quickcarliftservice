@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Icon from "@/components/Icon";
@@ -78,6 +79,18 @@ export default async function RoutePage({
         <div className="container-page">
           <div className="grid gap-10 lg:grid-cols-3">
             <div className="space-y-10 lg:col-span-2">
+              {route.image && (
+                <div className="relative h-56 overflow-hidden rounded-xl sm:h-72">
+                  <Image
+                    src={route.image}
+                    alt={route.imageAlt ?? `${route.origin} to ${route.destination} car lift`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                </div>
+              )}
               {/* Pricing — shown only when real prices are available */}
               {route.pricing && (
                 <div>
